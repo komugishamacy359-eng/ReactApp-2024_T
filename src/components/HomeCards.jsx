@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Card from './Card'
 
-const Homecards = () => {
+const HomeCards = () => {
   return (
     <section className="py-4">
       <div className="container-xl lg:container m-auto">
@@ -36,4 +36,4 @@ const Homecards = () => {
   )
 }
 
-export default Homecards
+export default HomeCards
