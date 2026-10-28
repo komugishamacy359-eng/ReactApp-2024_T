@@ -6,11 +6,14 @@ import {
 } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
+import NavBar from "./components/Navbar";
+import ViewAllJobs from "./components/ViewAllJobs";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
+      <Route path="/jobs" element={<ViewAllJobs />} />
     </Route>
   )
 );
@@ -20,3 +23,15 @@ const App = () => {
 };
 
 export default App;
+
+// import Counter from "./components/Exercise";
+
+// const App = () => {
+//   return (
+//     <>
+//       <Counter />
+//     </>
+//   )
+// }
+
+// export default App;
