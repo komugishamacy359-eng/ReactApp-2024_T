@@ -4,9 +4,9 @@ import {FaMapMarker} from "react-icons/fa"
 const JobListing = ({job}) => {
   const [showAllDescription, setShowAllDescription] = useState(false);
 
-  let description = job.description;
+  let description = job.description ?? '';
 
-  if(!showAllDescription) {
+  if(!showAllDescription && description.length > 91) {
     description = description.substring(0,91) + '...';
   }
 
