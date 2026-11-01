@@ -10,12 +10,14 @@ const JobListings = ({isHome = false}) => {
   useEffect(() => {
     const fetchJobs = async () => {
       const apiUrl = isHome 
-      ? 'http://localhost:8000/jobs?_limit=3' 
+      ? 'http://localhost:8000/jobs' 
       : 'http://localhost:8000/jobs';
+      console.log(`URl: ${apiUrl}`);
       try {
         const res = await fetch(apiUrl);
         const data = await res.json();
-        setJobs(data);
+          console.log('Jobs loaded:', data)
+        setJobs(isHome ? data.slice(0, 3) : data)
       } catch (error) {
         console.log('Error Fetching Data', error)
       } finally {
@@ -24,7 +26,9 @@ const JobListings = ({isHome = false}) => {
     }
 
     fetchJobs();
+    
   }, [])
+  
 
   return (
     <section className="bg-blue-50 px-4 py-10">
